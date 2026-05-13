@@ -22,3 +22,17 @@ def clasificar_ventas(df):
     df['Categoria Venta'] = df['Ingreso Total'].apply(categorizar_ventas)
     
     return df
+
+def calcular_desviacion(x):
+
+    return x - x.mean()
+
+def calcular_puntos(monto):
+    if monto > 1000:
+        return monto * 0.15  # 10% del total en puntos
+    elif monto > 750:
+        return monto * 0.1   # 5% del total en puntos
+    elif monto > 150:
+        return monto * 0.05  # 5% del total en puntos
+    else:
+        return 0             # Sin puntos para compras bajas
